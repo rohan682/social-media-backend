@@ -1,4 +1,31 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Social Media Backend API
+
+A RESTful backend API for a social media platform built with Next.js API routes, MongoDB, and Mongoose. This project provides user authentication with JWT, user registration, post creation, and retrieval functionalities. Designed to serve as the backend for any social media frontend app.
+
+---
+
+## Features
+
+- User registration and login with secure password hashing (bcrypt)
+- JWT-based authentication and authorization
+- Create, fetch, and manage posts
+- MongoDB data persistence with Mongoose ODM
+- Structured API routes using Next.js app router
+- Ready for further extensions: comments, likes, follows, etc.
+
+---
+
+## Tech Stack
+
+- **Next.js** (API routes)
+- **MongoDB** (NoSQL database)
+- **Mongoose** (MongoDB ODM)
+- **JSON Web Tokens (JWT)** for authentication
+- **bcrypt** for password hashing
+- **TypeScript**
+
+---
+
 
 ## Getting Started
 
@@ -14,23 +41,92 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Prerequisites
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Node.js (v16+ recommended)
+- MongoDB (local installation or MongoDB Atlas cluster)
+- Git
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Installation
 
-## Learn More
+1. Clone this repo:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+git clone https://github.com/yourusername/social-media-backend.git
+cd social-media-backend
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Install dependencies
 
-## Deploy on Vercel
+```bash
+npm install
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Create a .env.local file in the root directory with the following variables
+
+MONGODB_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret_key
+
+---
+
+### Run the development server
+
+```bash
+npm run dev
+```
+
+---
+
+### API Endpoints
+
+Auth
+
+POST /api/auth/register - Register a new user
+POST /api/auth/login - Login and receive JWT token
+
+Users
+
+GET /api/users/me - Get current authenticated user details (requires JWT)
+
+Posts
+
+GET /api/posts - Fetch all posts
+POST /api/posts - Create a new post (requires JWT)
+
+---
+
+### Usage
+
+Use any REST client like Postman or the VSCode REST Client extension to test the endpoints.
+
+Include your JWT token in the Authorization header as:
+
+Authorization: Bearer <your_jwt_token>
+
+---
+
+### Future Improvements
+
+Add comments, likes, and follow/unfollow features
+
+Add pagination and filtering for posts
+
+Add unit and integration tests
+
+Add deployment scripts and CI/CD pipelines
+
+---
+
+### License
+
+This project is licensed under the MIT License.
+
+---
+
+### Contact
+
+Created by Rohan Pujara
